@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saldo a Favor de Clientes - Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Cliente: {{ cliente.nombre }}</h1>
+    <h3>Saldo: {{ cliente.saldo }}</h3>
+    <h2>Abonos:</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+        </tr>
+        {% for abono in abonos %}
+        <tr>
+            <td>{{ abono.id }}</td>
+            <td>{{ abono.fecha }}</td>
+            <td>{{ abono.monto }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/abonar/{{ cliente.id }}">Realizar abono</a>
+    <a href="/">Volver a Clientes</a>
+</body>
+</html>

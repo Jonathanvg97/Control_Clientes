@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saldo a Favor de Clientes - Agregar Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Agregar Cliente</h1>
+    <form action="/agregar" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+        <label for="saldo">Saldo:</label>
+        <input type="number" id="saldo" name="saldo" required>
+        <br><br>
+        <label for="porcentaje">porcentaje:</label>
+        <input type="number" id="porcentaje" name="porcentaje" required>
+        <br><br>
+        <input type="submit" value="Agregar">
+    </form>
+    <a href="/">Volver a Clientes</a>
+</body>
+</html>

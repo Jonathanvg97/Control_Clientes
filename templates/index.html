@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prestamo Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Prestamo Clientes</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Saldo</th>
+            <th>Acciones</th>
+        </tr>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.saldo }}</td>
+            <td>
+                <a href="/cliente/{{ cliente.id }}">Ver</a>
+                <a href="/abonar/{{ cliente.id }}">Abonar</a>
+            </td>
+            <td>
+                <a href="/editar/{{ cliente.id }}">Editar</a> 
+                <a href="/eliminar/{{ cliente.id }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/agregar">Agregar cliente</a>
+
+</body>
+</html>

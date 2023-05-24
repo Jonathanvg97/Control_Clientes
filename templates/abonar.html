@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saldo a Favor de Clientes - Realizar Abono</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Realizar Abono</h1>
+    <h3>Cliente: {{ cliente.nombre }}</h3>
+    <h3>Saldo actual: {{ cliente.saldo }}</h3>
+    <form action="/abonar/{{ cliente.id }}" method="POST">
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto" required>
+        <br><br>
+        <input type="submit" value="Abonar">
+    </form>
+    <a href="/a">Volver a Clientes</a>
+</body>
+</html>
